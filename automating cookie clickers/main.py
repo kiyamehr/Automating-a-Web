@@ -46,13 +46,17 @@ while True:
     
     # because we have 4 upgrades we want to iterate through:
     for i in range(4):
+        #  the product prefix and the number of the product we want to buy
         product_price = driver.find_element(By.ID, product_price_prefix + str(i)).text.replace(",", "")
         
+        # if the text was not yet a digit
         if not product_price.isdigit():
             continue
         
+        # turn the price into an integer
         product_price = int(product_price)
         
+        # buying upgrades
         if cookies_count >= product_price:
             product = driver.find_element(By.ID, product_prefix + str(i))
             product.click()
