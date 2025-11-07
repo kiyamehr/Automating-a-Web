@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 driver.get("https://orteil.dashnet.org/cookieclicker/")
 
 cookie_id = "bigCookie"
